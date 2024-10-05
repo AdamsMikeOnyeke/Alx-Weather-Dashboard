@@ -1,0 +1,78 @@
+/* App.css */
+body {
+    /* background: linear-gradient(to bottom, #4A90E2, #B3C9E6); */
+    font-family: 'Arial', sans-serif; /* You can choose any font you like */
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container */
+.container {
+    max-width: 1200px; /* Increased width for a dashboard feel */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Shadow and border radius for cards */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 0; /* Spacing between cards */
+}
+
+/* Header and Titles */
+h1, h2, h3, h4, h5 {
+    color: #333;
+}
+
+/* Button styles */
+button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #357ABD; /* Darker shade on hover */
+}
+
+/* Forecast styles */
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.forecast-card img {
+    width: 50px; /* Slightly larger icons for better visibility */
+}
+
+/* Adjustments for inputs */
+input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%; /* Full width for the input */
+}
+
+/* Add hover effects on input */
+input:hover {
+    border-color: #4A90E2; /* Change border color on hover */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr; /* Sidebar and main content */
+        gap: 20px;
+    }
+}
