@@ -18,10 +18,14 @@ function App() {
     const cityName = query.q ? query.q : 'current location'
     toast.info(`Fetching weather data for ${cityName}`)
 
-    await getFormattedWeatherData({ ...query, units }).then((data) => {
+    try {
+      const data = await getFormattedWeatherData({ ...query, units });
       toast.success(`Fetched weather data for ${data.name}, ${data.country}`)
       setWeather(data)
-    })
+    } catch (error) {
+      toast.error(`Failed to fetch weather data: ${error.message}`)
+      setWeather(null) // Clear weather data in case of an error
+    }
   }
 
   useEffect(() => {
@@ -29,10 +33,6 @@ function App() {
   }, [query, units])
 
   const formatBackground = () => {
-    // if (!weather) return 'from-cyan-600 to-blue-700'
-    // const threshold = units === 'metric' ? 20 : 60
-    // if (weather.temp <= threshold) return 'from-cyan-600 to-blue-700'
-    // return 'from-yellow-600 to-orange-700'
     return 'bg-black'
   }
 
@@ -51,7 +51,7 @@ function App() {
         </>
       )}
 
-      <ToastContainer autoClose={2500} hideProgressBar={true} theme='colored' className='text-2xl'/>
+      <ToastContainer autoClose={2500} hideProgressBar={true} theme='colored' className='text-2xl' />
     </div>
   )
 }

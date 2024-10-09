@@ -14,7 +14,7 @@ function Inputs({ setQuery, setUnits }) {
         const { latitude, longitude } = position.coords;
         setQuery({ lat: latitude, lon: longitude });
       });
-    }
+    } 
   };
 
   return (

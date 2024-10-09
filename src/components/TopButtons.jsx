@@ -24,4 +24,5 @@ function TopButtons({ setQuery }) {
   );
 }
 
+
 export default TopButtons;
